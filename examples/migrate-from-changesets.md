@@ -21,11 +21,11 @@ Follow the root [README quickstart](../README.md#quickstart). Commits/PR titles 
 | --- | --- |
 | Human writes a changeset per PR | Classifier reads subjects (`feat:` / `fix:` / `docs:`) |
 | `major` / `minor` / `patch` in the markdown file | Kind from subjects; **major only** via `APP_VERSION_MAJOR` |
-| Independent or locked workspace versions | Root `VERSION` + root `package.json` only |
+| Independent or locked workspace versions | Same version via extra `versionFiles` paths; no independent graph |
 | `changesets/action` version + publish | Action dry-run comment; write on merge to `prodBranch` |
 | Linked packages / ignore list | Not v1 |
 
-This repository's own nested `packages/*/package.json` stay `0.0.0` on purpose. There is no Changesets process here.
+This repository locksteps npm CLI/core with root `VERSION` through extra `versionFiles` entries. That is **not** a Changesets package graph.
 
 ## Surprises
 
@@ -34,4 +34,4 @@ This repository's own nested `packages/*/package.json` stay `0.0.0` on purpose. 
 - Docs-only PRs do not bump.
 - Fork PRs never write.
 
-Stay on Changesets for a huge npm monorepo graph. That is the honest split — not a temporary gap you should paper over with PolicySemVer path filters.
+Stay on Changesets for a huge npm monorepo graph. That is the honest split — not a temporary gap you should paper over with PolicySemVer path filters. v1 **Option B:** no `workspaces` config key (unknown key fail-closed); path-filter MVP is 0.2.

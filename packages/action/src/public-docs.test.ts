@@ -15,10 +15,8 @@ it("README quickstart is Action dry-run under 15 minutes", () => {
   expect(readme).toMatch(/## Quickstart/);
   expect(readme).toMatch(/under 15 minutes/);
   expect(readme).toMatch(/PolicySemVer \(dry-run\)/);
-  expect(readme).toMatch(
-    /uses: besarrahmat\/policy-semver\/packages\/action@<full-commit-sha>/,
-  );
-  expect(readme).toMatch(/npx policy-semver@0\.1\.0 classify --help/);
+  expect(readme).toMatch(/uses: besarrahmat\/policy-semver@<full-commit-sha>/);
+  expect(readme).toMatch(/npx policy-semver@1\.0\.0 classify --help/);
 });
 
 it("README does not claim Changesets monorepo superiority", () => {
@@ -26,6 +24,8 @@ it("README does not claim Changesets monorepo superiority", () => {
     /does not claim to be better than Changesets for monorepos/,
   );
   expect(readme).toMatch(/examples\/migrate-from-changesets\.md/);
+  expect(readme).toMatch(/Option B/);
+  expect(readme).not.toMatch(/skip-if-no-match/);
 });
 
 it("README does not point at the local gitignored plan folder", () => {

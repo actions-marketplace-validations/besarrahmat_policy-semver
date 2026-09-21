@@ -1,7 +1,7 @@
 {
-  "version": "0.1.0",
-  "kind": "minor",
-  "gitSha": "b92b0cf2e7c91901fe48425346ed402220aa58cb",
-  "tag": "v0.1.0",
-  "at": "2026-08-22T07:35:39.063Z"
+  "version": "1.0.1",
+  "kind": "patch",
+  "gitSha": "1e6ac2024874f02fecd2b9172d3d4f3e787b1a1d",
+  "tag": "v1.0.1",
+  "at": "2026-09-02T09:53:34.523Z"
 }
